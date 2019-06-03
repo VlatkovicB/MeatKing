@@ -5,8 +5,6 @@
 <tiles-definitions>
 	<definition name="common"
 		template="/WEB-INF/layout/default.jsp">
-		<put-attribute name="header"
-			value="/WEB-INF/tiles/header.jsp" />
 		<put-attribute name="menu"
 			value="/WEB-INF/tiles/menu.jsp" />
 		<put-attribute name="footer"
@@ -15,7 +13,40 @@
 
 	<definition name="home" extends="common">
 		<put-attribute name="title" value="MeatKing" />
-		<put-attribute name="body" value="/WEB-INF/tiles/home.jsp" />
+		<put-attribute name="header"
+			value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/tiles/home.jsp" />
+	</definition>
+
+	<definition name="food" extends="common">
+		<put-attribute name="title" value="Food Menu" />
+		<put-attribute name="body"
+			value="/WEB-INF/tiles/food-menu.jsp" />
+	</definition>
+
+	<definition name="reservation" extends="common">
+		<put-attribute name="title" value="Reservation" />
+		<put-attribute name="body"
+			value="/WEB-INF/tiles/reservation.jsp" />
+	</definition>
+
+	<definition name="chefs" extends="common">
+		<put-attribute name="title" value="Our Chefs" />
+		<put-attribute name="body"
+			value="/WEB-INF/tiles/chefs.jsp" />
+	</definition>
+
+	<definition name="specials" extends="common">
+		<put-attribute name="title" value="Food Menu" />
+		<put-attribute name="body"
+			value="/WEB-INF/tiles/specials.jsp" />
+	</definition>
+
+	<definition name="facts" extends="common">
+		<put-attribute name="title" value="Food Menu" />
+		<put-attribute name="body"
+			value="/WEB-INF/tiles/facts.jsp" />
 	</definition>
 
 </tiles-definitions>

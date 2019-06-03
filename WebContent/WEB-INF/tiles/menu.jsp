@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="menu" class="navbar navbar-inverse navbar-fixed-top"
 	role="navigation">
@@ -11,7 +12,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><h2>Meat King</h2></a>
+			<a class="navbar-brand" href="#">Meat King</a>
 		</div>
 		<!-- navbar-header -->
 		<div id="navbar" class="navbar-collapse collapse">
@@ -21,14 +22,14 @@
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#story">Story</a></li>
-				<li><a href="#reservation">Reservation</a></li>
-				<li><a href="#chefs">Our Chefs</a></li>
+				<li><a href="<c:url value='home'/>">Story</a></li>
+				<li><a href="<c:url value='reservation'/>">Reservation</a></li>
+				<li><a href="<c:url value='chefs'/>">Our Chefs</a></li>
 
 
-				<li><a href="#facts">Facts</a></li>
-				<li><a href="#food-menu">Food Menu</a></li>
-				<li><a href="#special-offser">Special Offers</a></li>
+				<li><a href="<c:url value='facts'/>">Facts</a></li>
+				<li><a href="<c:url value='food'/>">Food Menu</a></li>
+				<li><a href="<c:url value='specials'/>">Special Offers</a></li>
 
 				<!--fix for scroll spy active menu element-->
 				<li style="display: none;"><a href="#header"></a></li>
