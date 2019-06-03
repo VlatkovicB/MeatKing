@@ -17,19 +17,20 @@
 		<!-- navbar-header -->
 		<div id="navbar" class="navbar-collapse collapse">
 			<div class="hidden-xs" id="logo">
-				<a href="#header"> <img src="static/img/logo.png" alt="">
+				<a href="<c:url value='/home'/>"> <img src="static/img/logo.png"
+					alt="">
 				</a>
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="<c:url value='home'/>">Story</a></li>
-				<li><a href="<c:url value='reservation'/>">Reservation</a></li>
-				<li><a href="<c:url value='chefs'/>">Our Chefs</a></li>
+				<li><a href="<c:url value='/home'/>">Story</a></li>
+				<li><a href="<c:url value='/reservation'/>">Reservation</a></li>
+				<li><a href="<c:url value='/chefs'/>">Our Chefs</a></li>
 
 
-				<li><a href="<c:url value='facts'/>">Facts</a></li>
-				<li><a href="<c:url value='food'/>">Food Menu</a></li>
-				<li><a href="<c:url value='specials'/>">Special Offers</a></li>
+				<li><a href="<c:url value='/facts'/>">Facts</a></li>
+				<li><a href="<c:url value='/food'/>">Food Menu</a></li>
+				<li><a href="<c:url value='/specials'/>">Special Offers</a></li>
 
 				<!--fix for scroll spy active menu element-->
 				<li style="display: none;"><a href="#header"></a></li>
