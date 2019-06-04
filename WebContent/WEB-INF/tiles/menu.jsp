@@ -33,7 +33,7 @@
 				<li><a href="<c:url value='/specials'/>">Special Offers</a></li>
 
 				<!--fix for scroll spy active menu element-->
-				<li style="display: none;"><a href="#header"></a></li>
+				<li style="display: none;"><a href="#story"></a></li>
 			</ul>
 		</div>
 		<!--/.navbar-collapse -->

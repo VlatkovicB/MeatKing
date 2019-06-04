@@ -18,7 +18,8 @@
 			</div>
 		</div>
 		<div class="bottom text-center">
-			<a id="scrollDownArrow" href="#"><i class="fa fa-chevron-down"></i></a>
+			<a id="scrollDownArrow" href="#story"><i
+				class="fa fa-chevron-down"></i></a>
 		</div>
 	</div>
 	<!-- /#header -->
