@@ -13,6 +13,7 @@ public class Item {
 	private String name;
 	private String description;
 	private String image;
+	private double price;
 
 	public long getId() {
 		return id;
@@ -44,5 +45,13 @@ public class Item {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 }

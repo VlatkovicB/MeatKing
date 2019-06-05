@@ -1,5 +1,7 @@
 package com.vlatkovic.meatking.dao;
 
+import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -40,5 +42,11 @@ public class ItemDao {
 		query.executeUpdate();
 	}
 
-	/*********** ***********/
+	/*********** Get All Items ***********/
+	@SuppressWarnings("unchecked")
+	public List<Item> getAllItems() {
+		Criteria crit = session().createCriteria(Item.class);
+		return crit.list();
+	}
+
 }

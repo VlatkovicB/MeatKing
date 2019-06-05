@@ -1,5 +1,7 @@
 package com.vlatkovic.meatking.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,5 +30,9 @@ public class ItemService {
 	public void deleteItem(int id) {
 		itemDao.deleteItem(id);
 	}
-	/*********** ***********/
+
+	/*********** Get All Items ***********/
+	public List<Item> getAllItems() {
+		return itemDao.getAllItems();
+	}
 }
