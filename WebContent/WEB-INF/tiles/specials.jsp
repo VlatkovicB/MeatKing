@@ -4,28 +4,20 @@
 
 <div id="special-offser" class="parallax pricing">
 	<div class="container inner">
-
 		<h2 class="section-title text-center">Special Offers</h2>
 		<p class="lead main text-center">There is no sincerer love than
 			the love of food!</p>
-
 		<div class="row">
 			<c:forEach var="item" items="${specials}">
 				<div class="col-md-6 col-sm-6">
-
 					<div class="pricing-item">
-
 						<a href="#"><img class="img-responsive img-thumbnail"
-							src="static/img/dish/dish3.jpg" alt=""></a>
-
+							src="<c:url value="${item.value.image}"/>" alt=""></a>
 						<div class="pricing-item-details">
-
 							<h3>
 								<a href="#">${item.value.name }</a>
 							</h3>
-
 							<p>${item.value.description }</p>
-
 							<a class="btn btn-danger" href="#">Order now</a>
 							<div class="clearfix"></div>
 						</div>
