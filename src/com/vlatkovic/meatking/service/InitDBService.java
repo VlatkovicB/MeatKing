@@ -1,12 +1,18 @@
 package com.vlatkovic.meatking.service;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,12 +29,15 @@ public class InitDBService {
 	@Autowired
 	private ItemService itemService;
 
+	@Value("classpath:com/vlatkovic/meatking/properties/restaurant_menu.json")
+	private Resource resource;
+
 	/**
 	 * Fills database with data from General object
 	 */
 	@PostConstruct
 	public void init() {
-		General general = populateGeneralFromJson();
+		General general = populateGeneralFromJson(stringFromResource());
 
 		if (general != null) {
 			for (Category cat : general.getCategorys()) {
@@ -45,13 +54,34 @@ public class InitDBService {
 	}
 
 	/**
-	 * Populates General object from example Json found online just to have some
-	 * data.
+	 * Populates General object from json.
+	 * 
+	 * @param json
+	 * @return
+	 */
+	private General populateGeneralFromJson(String json) {
+		Gson gson = new Gson();
+
+		return gson.fromJson(json, General.class);
+	}
+
+	/**
+	 * Converts Resource to String
 	 * 
 	 * @return
 	 */
-	private General populateGeneralFromJson() {
-		General general = null;
+	private String stringFromResource() {
+		String resourceToString = null;
+		try {
+			resourceToString = new String(Files.readAllBytes(resource.getFile().toPath()));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return resourceToString;
+	}
+
+	@SuppressWarnings("unused")
+	private String stringFromJsonUrl() {
 		Scanner scan = null;
 		String json = null;
 		try {
@@ -65,10 +95,6 @@ public class InitDBService {
 			scan.close();
 		}
 
-		Gson gson = new Gson();
-		general = gson.fromJson(json, General.class);
-
-		return general;
+		return json;
 	}
-
 }

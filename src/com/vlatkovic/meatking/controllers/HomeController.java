@@ -50,16 +50,17 @@ public class HomeController {
 		/**
 		 * Creates a map with 4 random items from all the items to display as specials
 		 */
-		Map<Long, Item> list = new HashMap<Long, Item>();
-		while (list.size() < 4) {
-			Item item = items.get((int) (Math.random() * items.size()));
+		if (items.size() >= 4) {
+			Map<Long, Item> map = new HashMap<Long, Item>();
+			while (map.size() < 4) {
+				Item item = items.get((int) (Math.random() * items.size()));
 
-			if (!list.containsKey(item.getId())) {
-				list.put(item.getId(), item);
+				if (!map.containsKey(item.getId())) {
+					map.put(item.getId(), item);
+				}
 			}
+			model.addAttribute("specials", map);
 		}
-
-		model.addAttribute("specials", list);
 
 		return "specials";
 	}
