@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div id="reservation" class="light-wrapper">
 	<section class="ss-style-top"></section>
@@ -10,7 +11,10 @@
 			lorem Ipsum</p>
 		<div class="row">
 			<div class="col-md-6">
-				<form:form class="form form-table" method="post" name="">
+
+				<c:url var="action_url" value="/add_reservation" />
+				<form:form cssClass="form form-table" commandName="reservation"
+					action="${action_url }">
 					<div class="form-group">
 						<h4>Fill the form for table reservation (all fields required)</h4>
 					</div>
@@ -18,27 +22,28 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="first_name1">first name</label>
-							<form:input path="first_name" class="form-control hint"
+							<form:input path="firstName" class="form-control hint"
 								type="text" id="first_name1" name="first_name"
-								placeholder="First name" required />
+								placeholder="First name" required="required" />
 						</div>
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="last_name1">last name</label>
-							<form:input path="last_name" class="form-control hint"
+							<form:input path="lastName" cssClass="form-control hint"
 								type="text" id="last_name1" name="last_name"
-								placeholder="Last name" required />
+								placeholder="Last name" required="required" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="email1">email</label>
-							<form:input path="email" class="form-control hint" type="email"
-								id="email1" name="email" placeholder="Email@domain.com" required />
+							<form:input path="email" cssClass="form-control hint"
+								type="email" id="email1" name="email"
+								placeholder="Email@domain.com" required="required" />
 						</div>
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="phone1">phone</label>
-							<form:input path="phone" class="form-control hint" type="text"
-								id="phone1" name="phone" placeholder="Phone" required />
+							<form:input path="phone" cssClass="form-control hint" type="text"
+								id="phone1" name="phone" placeholder="Phone" required="required" />
 						</div>
 					</div>
 					<div class="row">
@@ -46,32 +51,32 @@
 							<label class="sr-only" for="reserv_date1">reservation
 								date</label>
 							<form:input path="date"
-								class="form-control datepicker hasDatepicker hint" type="text"
-								id="reserv_date1" name="reserv_date"
-								placeholder="Reservation date" required />
+								cssClass="form-control datepicker hasDatepicker hint"
+								type="text" id="reserv_date1" name="reserv_date"
+								placeholder="Reservation date" required="required" />
 						</div>
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="numb_guests1">number of
 								guests</label>
-							<form:input path="numb_guests" class="form-control hint"
+							<form:input path="numberOfGuests" cssClass="form-control hint"
 								type="text" id="numb_guests1" name="numb_guests"
-								placeholder="Number of guests" required />
+								placeholder="Number of guests" required="required" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="alt_reserv_date1">time from</label>
-							<form:input path="time_from"
-								class="form-control datepicker hasDatepicker hint" type="text"
-								id="alt_reserv_date1" name="alt_reserv_date"
-								placeholder="Time from" required />
+							<form:input path="timeFrom"
+								cssClass="form-control datepicker hasDatepicker hint"
+								type="text" id="alt_reserv_date1" name="alt_reserv_date"
+								placeholder="Time from" required="required" />
 						</div>
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="time1">time</label>
-							<form:input path="time_to"
-								class="form-control timepicker ui-timepicker-input hint"
+							<form:input path="timeTo"
+								cssClass="form-control timepicker ui-timepicker-input hint"
 								type="text" id="time1" name="time" placeholder="Time to"
-								required autocomplete="off" />
+								required="" autocomplete="off" />
 						</div>
 					</div>
 					<div class="row">

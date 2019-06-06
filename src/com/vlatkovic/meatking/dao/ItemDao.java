@@ -19,7 +19,7 @@ public class ItemDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public Session session() {
+	private Session session() {
 		return sessionFactory.getCurrentSession();
 	}
 
