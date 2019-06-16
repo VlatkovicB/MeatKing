@@ -15,7 +15,7 @@
 							src="<c:url value="${item.value.image}"/>" alt=""></a>
 						<div class="pricing-item-details">
 							<h3>
-								<a href="#">${item.value.name }</a>
+								<a href="<c:url value="${item.value.id}"/>">${item.value.name }</a>
 							</h3>
 							<p>${item.value.description }</p>
 							<a class="btn btn-danger" href="#">Order now</a>

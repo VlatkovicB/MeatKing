@@ -47,6 +47,8 @@ public class InitDBService {
 					item.setPrice(menuItem.getSub_items().get(0).getPrice());
 					// Adding a random image
 					item.setImage("static/img/dish/dish" + ((int) (Math.random() * 4) + 1) + ".jpg");
+					// Sets approximately 50% of items as specials
+					item.setSpecial((int) (Math.random() * 10 + 1) > 5 ? true : false);
 
 					itemService.saveOrUpdateItem(item);
 				}

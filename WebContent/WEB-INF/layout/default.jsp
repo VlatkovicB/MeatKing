@@ -29,6 +29,7 @@
 <script src="static/js/jquery.scrollTo.min.js"></script>
 <script src="static/js/bootstrap.min.js"></script>
 <script src="static/js/main.js"></script>
+<script src="static/js/form-validate.js"></script>
 
 <title><tiles:getAsString name="title" /></title>
 </head>

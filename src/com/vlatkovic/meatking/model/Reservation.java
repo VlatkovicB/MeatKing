@@ -1,42 +1,41 @@
 package com.vlatkovic.meatking.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.FutureOrPresent;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Reservation {
+public class Reservation implements Serializable {
 
+	private static final long serialVersionUID = -208137368091622265L;
 	@Id
 	@GeneratedValue
 	private int id;
-	@NotNull
+	@NotNull(message = "You must enter your first name.")
 	private String firstName;
-	@NotNull
+	@NotNull(message = "You must enter your last name.")
 	private String lastName;
 	@NotNull
-	@Email
+	@Pattern(regexp = ".*\\@.*\\..*", message = "Enter a valid email address.")
 	private String email;
-	@Size(min = 9, max = 13)
+//	@Size(min = 9, max = 13)
 	private String phone;
-	@DateTimeFormat(pattern = "dd.MM.yyyy")
-	@FutureOrPresent
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date date;
-	@Positive
+	@Min(value = 1, message = "You must reserve for at least 1 person.")
 	private int numberOfGuests;
-	@DateTimeFormat(pattern = "hh:mm")
-	private Date timeFrom;
-	@DateTimeFormat(pattern = "hh:mm")
-	private Date timeTo;
+	@Pattern(regexp = "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", message = "Enter time in hh:mm format.")
+	private String timeFrom;
+	@Pattern(regexp = "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$", message = "Enter time in hh:mm format.")
+	private String timeTo;
 
 	public String getFirstName() {
 		return firstName;
@@ -83,22 +82,23 @@ public class Reservation {
 	}
 
 	public void setDate(Date date) {
+
 		this.date = date;
 	}
 
-	public Date getTimeFrom() {
+	public String getTimeFrom() {
 		return timeFrom;
 	}
 
-	public void setTimeFrom(Date timeFrom) {
+	public void setTimeFrom(String timeFrom) {
 		this.timeFrom = timeFrom;
 	}
 
-	public Date getTimeTo() {
+	public String getTimeTo() {
 		return timeTo;
 	}
 
-	public void setTimeTo(Date timeTo) {
+	public void setTimeTo(String timeTo) {
 		this.timeTo = timeTo;
 	}
 

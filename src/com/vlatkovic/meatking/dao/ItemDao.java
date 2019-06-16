@@ -49,4 +49,10 @@ public class ItemDao {
 		return crit.list();
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Item> getAllSpecials() {
+		Query query = session().createQuery("FROM Item WHERE special = true");
+		return query.list();
+	}
+
 }

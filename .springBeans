@@ -10,6 +10,7 @@
 		<config>WebContent/WEB-INF/dispatcher-servlet.xml</config>
 		<config>src/com/vlatkovic/meatking/context/bean-context.xml</config>
 		<config>src/com/vlatkovic/meatking/context/tiles-context.xml</config>
+		<config>WebContent/WEB-INF/ecommerce-servlet.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

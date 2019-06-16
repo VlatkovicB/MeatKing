@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <div id="reservation" class="light-wrapper">
 	<section class="ss-style-top"></section>
@@ -10,8 +11,7 @@
 		<p class="lead main text-center">Reserve your table &amp; enjoy
 			lorem Ipsum</p>
 		<div class="row">
-			<div class="col-md-6">
-
+			<div id="error" class="col-md-6">
 				<c:url var="action_url" value="/add_reservation" />
 				<form:form cssClass="form form-table" commandName="reservation"
 					action="${action_url }">
@@ -25,12 +25,14 @@
 							<form:input path="firstName" class="form-control hint"
 								type="text" id="first_name1" name="first_name"
 								placeholder="First name" required="required" />
+							<%-- <form:errors path="firstName" /> --%>
 						</div>
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="last_name1">last name</label>
 							<form:input path="lastName" cssClass="form-control hint"
 								type="text" id="last_name1" name="last_name"
 								placeholder="Last name" required="required" />
+							<%-- <form:errors path="lastName" /> --%>
 						</div>
 					</div>
 					<div class="row">
@@ -39,11 +41,13 @@
 							<form:input path="email" cssClass="form-control hint"
 								type="email" id="email1" name="email"
 								placeholder="Email@domain.com" required="required" />
+							<%-- <form:errors path="email" /> --%>
 						</div>
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="phone1">phone</label>
 							<form:input path="phone" cssClass="form-control hint" type="text"
 								id="phone1" name="phone" placeholder="Phone" required="required" />
+							<%-- <form:errors path="phone" /> --%>
 						</div>
 					</div>
 					<div class="row">
@@ -54,6 +58,7 @@
 								cssClass="form-control datepicker hasDatepicker hint"
 								type="text" id="reserv_date1" name="reserv_date"
 								placeholder="Reservation date" required="required" />
+							<%-- <form:errors path="date" /> --%>
 						</div>
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="numb_guests1">number of
@@ -61,6 +66,7 @@
 							<form:input path="numberOfGuests" cssClass="form-control hint"
 								type="text" id="numb_guests1" name="numb_guests"
 								placeholder="Number of guests" required="required" />
+							<%-- <form:errors path="numberOfGuests" /> --%>
 						</div>
 					</div>
 					<div class="row">
@@ -70,6 +76,7 @@
 								cssClass="form-control datepicker hasDatepicker hint"
 								type="text" id="alt_reserv_date1" name="alt_reserv_date"
 								placeholder="Time from" required="required" />
+							<%-- <form:errors path="timeFrom" /> --%>
 						</div>
 						<div class="col-lg-6 col-md-6 form-group">
 							<label class="sr-only" for="time1">time</label>
@@ -77,6 +84,7 @@
 								cssClass="form-control timepicker ui-timepicker-input hint"
 								type="text" id="time1" name="time" placeholder="Time to"
 								required="" autocomplete="off" />
+							<%-- <form:errors path="timeTo" /> --%>
 						</div>
 					</div>
 					<div class="row">
@@ -90,7 +98,8 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
-							<button type="submit" class="btn btn-danger btn-lg">Reserve!</button>
+							<button type="submit" onclick="return validate()"
+								class="btn btn-danger btn-lg">Reserve!</button>
 						</div>
 					</div>
 				</form:form>

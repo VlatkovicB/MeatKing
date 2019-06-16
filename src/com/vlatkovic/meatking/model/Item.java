@@ -1,25 +1,30 @@
 package com.vlatkovic.meatking.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Item {
+public class Item implements Serializable {
+
+	private static final long serialVersionUID = -8066007878604749461L;
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	private String name;
 	private String description;
 	private String image;
 	private double price;
+	private boolean special;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -53,5 +58,13 @@ public class Item {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public boolean isSpecial() {
+		return special;
+	}
+
+	public void setSpecial(boolean special) {
+		this.special = special;
 	}
 }

@@ -16,3 +16,4 @@ tmp/
 *~.nib
 local.properties
 .loadpath
+target/

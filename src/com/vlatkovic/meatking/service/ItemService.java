@@ -35,4 +35,8 @@ public class ItemService {
 	public List<Item> getAllItems() {
 		return itemDao.getAllItems();
 	}
+	/*********** Get All Specials ***********/
+	public List<Item> getAllSpecials() {
+		return itemDao.getAllSpecials();
+	}
 }

@@ -6,8 +6,7 @@
 	<div class="container inner">
 		<div class="row">
 			<div class="col-sm-6">
-				&copy; Copyright MeatKing 2019. <br />Theme By <a class="themeBy"
-					href="http://www.Themewagon.com">ThemeWagon</a>
+				&copy; Copyright <br />
 			</div>
 			<div class="col-sm-6">
 				<div class="social-bar">
