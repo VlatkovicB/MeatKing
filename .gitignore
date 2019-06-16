@@ -17,4 +17,4 @@ tmp/
 local.properties
 .loadpath
 target/
-.SpringBeans
+.springBeans
